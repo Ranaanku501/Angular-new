@@ -1,0 +1,12 @@
+.nav-section {
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    background: #ea363659;
+    animation: hue 30s infinite linear;
+    animation-duration: 10s;
+}
+.navbar-nav>li {
+    float: left;
+    padding: 20px 20px;
+}

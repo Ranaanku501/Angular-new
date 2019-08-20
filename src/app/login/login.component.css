@@ -1,0 +1,25 @@
+input{
+    display: block;
+    width: 100%;
+    max-width: 50%;
+    margin: 70px auto;
+    height: 50px;
+    padding: 10px 20px;
+}
+button {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 20%;
+    text-align: center;
+    background: #d33;
+    color: #fff;
+    padding: 10px 30px;
+    border-color: #d33;
+    border-width: 0;
+    font-size: 20px;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+form{
+    text-align: center;
+}
