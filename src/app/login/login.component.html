@@ -1,5 +1,16 @@
-<form>
-    <input type="email" placeholder="Enter Your Valid Email">
-    <input type="Password" placeholder="Password" max-lenght="8" minlength="5">
-    <button>login</button>
-</form>
+<form [formGroup]="login" (ngSubmit)="onLogin()" >
+    <input type="text" formControlName="email"><br>
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+    <div *ngIf="f.email.errors.required">Email is required</div>
+    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+    </div>
+    
+    
+    <input type="text" formControlName="password"><br>
+    <input type="submit" value="Submit">
+
+    
+    </form>
+
+    <input type="text" [(ngModel)]="name">
+    <p>{{ name }}</p>
