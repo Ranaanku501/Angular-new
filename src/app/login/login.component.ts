@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,Validators } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,23 +7,34 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  login : FormGroup;
-  submitted = false;
-  constructor() { }
+  form : FormGroup;
+
+  name = '';
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { 
+    this.form = this.formBuilder.group({
+      email_or_phone: ['', Validators.compose([Validators.required,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
+      password: ['', Validators.required]
+  });
+  }
+
 
   ngOnInit() {
-    this.login = new FormGroup({
-      email : new FormControl('',[Validators.required,Validators.email]),
-      Password : new FormControl('',Validators.required),
-    });
+  
   }
 
-  onLogin(){
-    this.submitted = true;
-    console.log(this.login.value);
-  }
+  loginFun() {
+    if (this.form.valid) {
+        console.log('form',this.form.value)
+    } else {
+        Object.keys(this.form.controls).forEach(key => {
+            this.form.controls[key].markAsTouched({onlySelf: true});
+        });
+    }
+}
 
-  // convenience getter for easy access to form fields
-get f() { return this.login.controls; }
+  
+
 
 }

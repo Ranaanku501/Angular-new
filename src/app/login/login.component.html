@@ -1,16 +1,26 @@
-<form [formGroup]="login" (ngSubmit)="onLogin()" >
-    <input type="text" formControlName="email"><br>
-    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-    <div *ngIf="f.email.errors.required">Email is required</div>
-    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+<form class="m-t" [formGroup]="form" (ngSubmit)="loginFun()" autocomplete="off">
+    <div class="form-group">
+        <input type="text" class="form-control required" formControlName="email_or_phone"
+               placeholder="Email">
+        <div class="text-danger"
+             *ngIf="form.controls['email_or_phone'].hasError('required') && form.controls['email_or_phone'].touched">
+            *Please enter email.
+        </div>
+        <div class="text-danger"
+             *ngIf="form.controls['email_or_phone'].hasError('pattern') && form.controls['email_or_phone'].touched">
+            *Please enter valid email.
+        </div>
     </div>
-    
-    
-    <input type="text" formControlName="password"><br>
-    <input type="submit" value="Submit">
+    <div class="form-group">
+        <input type="password" class="form-control required" formControlName="password"
+               placeholder="password">
+        <div class="text-danger"
+             *ngIf="form.controls['password'].hasError('required')  && form.controls['password'].touched">
+            *Please enter password.
+        </div>
+    </div>
 
-    
-    </form>
-
-    <input type="text" [(ngModel)]="name">
-    <p>{{ name }}</p>
+    <button *ngIf="!loader" type="submit" class="btn btn-primary block full-width m-b">
+        Login
+    </button>
+</form>
