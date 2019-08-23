@@ -22,4 +22,6 @@ button {
 }
 form{
     text-align: center;
+    height: 100%;
+    margin-bottom: 80px;
 }

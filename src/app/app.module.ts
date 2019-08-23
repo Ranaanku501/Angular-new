@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [ 
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    FormComponent
+    FormComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
