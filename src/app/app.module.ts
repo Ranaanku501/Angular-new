@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [ 
@@ -19,6 +20,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FooterComponent,
     FormComponent,
     SignUpComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
