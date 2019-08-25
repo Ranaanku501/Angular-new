@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { HomeComponent } from './home/home.component';
+// import { SlickCarouselModule } from './ngx-slick-carousel';
 
 @NgModule({
   declarations: [ 
@@ -21,12 +23,14 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FormComponent,
     SignUpComponent,
     AboutUsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    // SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
