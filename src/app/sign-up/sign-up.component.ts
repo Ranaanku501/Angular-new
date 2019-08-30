@@ -16,14 +16,26 @@ export class SignUpComponent implements OnInit {
   ) {
 
     this.form = this.formBuilder.group({
-      first_name: ['', Validators.compose([Validators.required,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
-      Last_name: ['', Validators.compose([Validators.required,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
-      Phone_Number: ['', Validators.compose([Validators.minLength(10), Validators.maxLength(10),Validators.required,Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
+      first_name: ['', Validators.compose([Validators.required])],
+      Last_name: ['', Validators.compose([Validators.required])],
+      Phone_Number: ['', Validators.compose([Validators.required])],
+      Amount: ['', Validators.compose([Validators.required])],
     });
     console.log("heloo");
    }
 
   ngOnInit() {
   }
+
+  signupFun() {
+    if (this.form.valid) {
+        console.log('form',this.form.value)
+    } else {
+        Object.keys(this.form.controls).forEach(key => {
+            this.form.controls[key].markAsTouched({onlySelf: true});
+        });
+    }
+}
+
 
 }

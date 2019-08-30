@@ -6,16 +6,13 @@
              *ngIf="form.controls['first_name'].hasError('required') && form.controls['first_name'].touched">
             *Please enter first name.
         </div>
-        <div class="text-danger"
-             *ngIf="form.controls['first_name'].hasError('pattern') && form.controls['first_name'].touched">
-            *Please enter only first name.
-        </div>
+      
     </div>
     <div class="form-group">
         <input type="text" class="form-control required"  formControlName="Last_name"
         placeholder="Last Name">
         <div class="text-danger"
-             *ngIf="form.controls['password'].hasError('required')  && form.controls['Last_name'].touched">
+             *ngIf="form.controls['Last_name'].hasError('required')  && form.controls['Last_name'].touched">
             *Please enter last name.
         </div>
     </div>
@@ -23,14 +20,22 @@
     <div class="form-group">
         <input type="number" class="form-control required" onKeyPress="if(this.value.length==10) return false;" required minlength="10" formControlName="Phone_Number"
         placeholder="Phone Number">
-       
+        <div class="text-danger"
+        *ngIf="form.controls['Phone_Number'].hasError('required')  && form.controls['Phone_Number'].touched">
+       *Please enter Phone Number.
+   </div>
     </div>
 
 
     <div class="form-group">
         <input type="number" class="form-control required" onKeyPress="if(this.value.length==4) return false;" formControlName="Amount"
         placeholder="Amount">
-       
+        
+        <div class="text-danger"
+        *ngIf="form.controls['Amount'].hasError('required')  && form.controls['Amount'].touched">
+            *Please enter Valid Amount.
+        </div>
+
     </div>
 
 
