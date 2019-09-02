@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 // import { SlickCarouselModule } from './ngx-slick-carousel';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HomeComponent } from './home/home.component';
     SignUpComponent,
     AboutUsComponent,
     HomeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
